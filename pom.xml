@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.gm.spring.reactive</groupId>
-	<artifactId>webflux-stock-stockQuote-service</artifactId>
+	<artifactId>spring-webflux-reactive-stockquote-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
