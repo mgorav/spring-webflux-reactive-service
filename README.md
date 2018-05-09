@@ -3,7 +3,7 @@
 An application demonstrates spring's reactive programing model
 
 ####Tech Stack
-1. Jdk 1.8+ (NOT JDK 1.9 Flux & Mono are not used)
+1. Jdk 1.8+ (**NO JDK 1.9 Flux & Mono are not used**)
 2. Spring BOOT 2.0.0.RELEASE (Spring 5.0.4 Webflux)
 3. Lombok 1.16.20
 
