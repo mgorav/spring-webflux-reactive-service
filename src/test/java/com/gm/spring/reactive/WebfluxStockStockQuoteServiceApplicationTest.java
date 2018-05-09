@@ -12,6 +12,8 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import java.util.concurrent.CountDownLatch;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.http.MediaType.APPLICATION_STREAM_JSON;
 
 
 @RunWith(SpringRunner.class)
@@ -26,10 +28,10 @@ public class WebfluxStockStockQuoteServiceApplicationTest {
         webTestClient
                 .get()
                 .uri("/quotes?size=20") //set size = 20
-                .accept(MediaType.APPLICATION_JSON)
+                .accept(APPLICATION_JSON)
                 .exchange()
                 .expectStatus().isOk()
-                .expectHeader().contentType(MediaType.APPLICATION_JSON)
+                .expectHeader().contentType(APPLICATION_JSON)
                 .expectBodyList(StockQuote.class)
                 .hasSize(20)
                 .consumeWith(allQuotes -> {
@@ -48,7 +50,7 @@ public class WebfluxStockStockQuoteServiceApplicationTest {
         webTestClient
                 .get()
                 .uri("/quotes")
-                .accept(MediaType.APPLICATION_STREAM_JSON)
+                .accept(APPLICATION_STREAM_JSON)
                 .exchange()
                 .returnResult(StockQuote.class)
                 .getResponseBody()

@@ -9,6 +9,8 @@ import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.http.MediaType.APPLICATION_STREAM_JSON;
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 
@@ -18,7 +20,7 @@ public class StockQuoteRouter {
     @Bean
     public RouterFunction<ServerResponse> route(StockQuoteHandler handler){
         return RouterFunctions
-                .route(GET("/quotes").and(accept(MediaType.APPLICATION_JSON)), handler::fetchQuotes)
-                .andRoute(GET("/quotes").and(accept(MediaType.APPLICATION_STREAM_JSON)), handler::streamQuotes);
+                .route(GET("/quotes").and(accept(APPLICATION_JSON)), handler::fetchQuotes)
+                .andRoute(GET("/quotes").and(accept(APPLICATION_STREAM_JSON)), handler::streamQuotes);
     }
 }

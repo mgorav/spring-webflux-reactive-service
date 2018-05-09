@@ -10,6 +10,8 @@ import reactor.core.publisher.Mono;
 
 import java.time.Duration;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON;
+import static org.springframework.http.MediaType.APPLICATION_STREAM_JSON;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
 
@@ -25,13 +27,13 @@ public class StockQuoteHandler {
         int size = Integer.parseInt(request.queryParam("size").orElse("10"));
 
         return ok()
-                .contentType(MediaType.APPLICATION_JSON)
+                .contentType(APPLICATION_JSON)
                 .body(this.stockQuoteGeneratorService.fetchQuoteStream(Duration.ofMillis(100))
                         .take(size), StockQuote.class);
     }
 
     public Mono<ServerResponse> streamQuotes(ServerRequest request){
-        return ok().contentType(MediaType.APPLICATION_STREAM_JSON)
+        return ok().contentType(APPLICATION_STREAM_JSON)
                 .body(this.stockQuoteGeneratorService.fetchQuoteStream(Duration.ofMillis(200)), StockQuote.class);
     }
 }

@@ -9,9 +9,9 @@ import java.time.Duration;
 import java.util.concurrent.CountDownLatch;
 import java.util.function.Consumer;
 
-public class StockStockQuoteGeneratorServiceImplTest {
+public class StockStockQuoteGeneratorServiceTest {
 
-    StockQuoteGeneratorServiceImpl quoteGeneratorService = new StockQuoteGeneratorServiceImpl();
+    StockQuoteGeneratorService quoteGeneratorService = new StockQuoteGeneratorService();
 
     @Before
     public void setUp() throws Exception {
