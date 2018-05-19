@@ -1,6 +1,12 @@
-####SpringWebfluxReactiveStockQuoteServiceApplication
+##SpringWebfluxReactiveStockQuoteServiceApplication
 
-An application demonstrates spring's reactive programing model
+An application demonstrates spring's reactive programing model and demonstrates:
+1. MONO (Mono<ServerResponse>)
+2. FLUX
+3. ROUTERS (RouterFunction<ServerResponse> route(StockQuoteHandler handler))
+4. HANDLERS
+5. [Spring + MongoDB based reactive consumer of this service](https://lnkd.in/eFvdFUg)
+6. [Project reactor](https://projectreactor.io)
 
 ####Tech Stack
 1. Jdk 1.8+ (**JDK 1.9 Flux & Mono are not used**)
