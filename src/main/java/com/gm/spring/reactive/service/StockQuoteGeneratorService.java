@@ -52,7 +52,7 @@ public class StockQuoteGeneratorService {
                     quote.setInstant(Instant.now());
                     return quote;
                 })
-                .log("guru.springframework.service.QuoteGenerator");
+                .log("com.gm.spring.reactive.service.QuoteGenerator");
     }
 
     private StockQuote updateQuote(StockQuote stockQuote) {
